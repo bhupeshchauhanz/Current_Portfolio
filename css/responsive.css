@@ -1,0 +1,206 @@
+/* 
+  Bhupesh Chauhan Portfolio - Responsiveness
+*/
+
+/* --- Large Tablet / Small Desktop (< 1100px) --- */
+@media screen and (max-width: 1100px) {
+    :root {
+        --section-padding: var(--space-2xl);
+    }
+
+    .navbar .container {
+        padding: 0 var(--container-padding);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-xl);
+        transform: translate3d(100%, 0, 0);
+        transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1500;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav-links.active {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hamburger {
+        display: flex !important;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-xl);
+        justify-items: center;
+    }
+
+    .hero-image-container {
+        justify-content: center !important;
+        order: -1;
+    }
+
+    .hero-image-wrapper {
+        transform: none !important;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skills-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-banner {
+        flex-direction: column;
+        gap: var(--space-xl);
+        text-align: center;
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .rotating-badge {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+    }
+
+    .rotating-badge svg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .badge-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-right {
+
+        gap: 12px;
+    }
+
+    #theme-toggle {
+        width: 38px;
+        height: 38px;
+        order: -1;
+    }
+
+    .hamburger {
+        z-index: 2000;
+    }
+
+    .modal-content {
+        padding: 24px;
+        border-radius: 20px;
+        max-height: 80vh;
+    }
+}
+
+/* --- Mobile (< 768px) --- */
+@media screen and (max-width: 767px) {
+    .nav-links {
+        transition: transform 0.34s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.24s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .skills-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: min(96vw, 96vw);
+        max-height: 92vh;
+        padding: 18px;
+        border-radius: 20px;
+        transition-duration: 0.28s;
+    }
+
+    .modal-body {
+        max-height: calc(92vh - 36px);
+        padding-right: 4px;
+    }
+
+    .modal-shell {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .modal-media-panel {
+        position: static;
+    }
+
+    .modal-media-frame {
+        min-height: 220px;
+        max-height: 42vh;
+        padding: 12px;
+    }
+
+    .modal-title {
+        font-size: clamp(1.5rem, 8vw, 2.2rem);
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+    }
+
+    .timeline-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .timeline-year {
+        font-size: 1.1rem;
+    }
+
+    .footer-brand span {
+        font-size: clamp(2rem, 12vw, 4rem);
+    }
+
+    .statement-text {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+    }
+}
+
+/* --- Small Mobile (< 480px) --- */
+@media screen and (max-width: 480px) {
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+    }
+}

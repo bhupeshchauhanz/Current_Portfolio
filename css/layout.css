@@ -1,0 +1,122 @@
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: var(--progress-height);
+    background: var(--progress-bg);
+    z-index: 9999;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.section {
+    padding: var(--section-padding) 0;
+    position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+    /* Placeholder to prevent scrollbar jump */
+}
+
+.hero-section {
+    padding-top: 100px;
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .grid-two {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    :root {
+        --container-padding: 20px;
+        --section-padding: var(--space-3xl);
+    }
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.grid-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+    .grid-three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid-three,
+    .grid-four {
+        grid-template-columns: 1fr;
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* Glass FOIT Prevention */
+body.is-loading .hero-title,
+body.is-loading .hero-description,
+body.is-loading .hero-social-link,
+body.is-loading .hero-btns,
+body.is-loading .hero-image-wrapper {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.is-loading {
+    overflow: hidden;
+}

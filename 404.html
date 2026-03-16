@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in the Void | Bhupesh Chauhan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        body {
+            background: #050505;
+            color: #FFFFFF;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: var(--font-body);
+        }
+
+        /* The Void Container */
+        .void-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: none;
+        }
+
+        /* Massive Background Text */
+        .bg-text-void {
+            position: absolute;
+            font-family: var(--font-heading);
+            font-size: clamp(10rem, 30vw, 25rem);
+            font-weight: 800;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+            user-select: none;
+            z-index: 1;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Revealed Content (Clipping Mask) */
+        .revealed-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            pointer-events: none;
+            background: #050505;
+            clip-path: circle(0px at 50% 50%);
+            transition: clip-path 0.1s ease-out;
+        }
+
+        .revealed-text-bg {
+            font-family: var(--font-heading);
+            font-size: clamp(10rem, 30vw, 25rem);
+            font-weight: 800;
+            color: var(--color-accent);
+            opacity: 0.3;
+            text-shadow: 0 0 50px var(--accent-glow);
+            white-space: nowrap;
+        }
+
+        /* Main Message Overlay */
+        .error-message-void {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            pointer-events: auto;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .error-title-void {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .error-desc-void {
+            font-size: 1.1rem;
+            opacity: 0.6;
+            margin-bottom: 2.5rem;
+            font-family: var(--font-accent);
+        }
+
+        /* The Torch Cursor */
+        .torch {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 85, 238, 0.12) 0%, rgba(0, 85, 238, 0.05) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 4;
+            transform: translate(-50%, -50%);
+            will-change: transform;
+        }
+
+        .torch-glow {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            border: 1px solid var(--color-accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 0 0 15px var(--color-accent);
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+            will-change: transform;
+            opacity: 0.5;
+        }
+
+        .torch-glow.active {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 85, 238, 0.1);
+            border-color: var(--color-accent);
+            opacity: 1;
+        }
+
+        /* Noise subtle overlay */
+        .noise-overlay {
+            opacity: 0.03;
+        }
+
+        @media (max-width: 1024px) {
+
+            .bg-text-void,
+            .revealed-text-bg {
+                font-size: 15rem;
+            }
+
+            .torch,
+            .torch-glow {
+                display: none;
+            }
+
+            .revealed-content {
+                clip-path: circle(150px at 50% 50%) !important;
+                transition: none;
+            }
+
+            .void-container {
+                cursor: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-mode error-page">
+    <div class="noise-overlay"></div>
+
+    <!-- Global Custom Cursor -->
+    <div class="custom-cursor js-cursor"></div>
+    <div class="custom-cursor-follower js-follower"></div>
+    <div class="cursor-glow js-cursor-glow"></div>
+
+    <!-- Enhanced Navbar -->
+    <nav class="navbar scrolled" style="background: transparent; border: none; box-shadow: none; z-index: 1000;">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">Bhupesh<span>.</span></a>
+            <div class="nav-right" style="display: flex; align-items: center; gap: 30px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; font-size: 0.9rem;">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="void-container">
+        <!-- The Torch Mask (Radial revealed area) -->
+        <div class="torch js-torch"></div>
+
+        <!-- Dimmed Background -->
+        <div class="bg-text-void js-parallax-bg">404</div>
+
+        <!-- Revealed Content -->
+        <div class="revealed-content js-revealer">
+            <div class="revealed-text-bg js-parallax-bg">404</div>
+        </div>
+
+        <!-- Content UI -->
+        <div class="error-message-void">
+            <h1 class="error-title-void">Bhai, andhere mein kaha bhatak gaye?</h1>
+            <p class="error-desc-void">It seems you've wandered into the void. Let me guide you back to civilization.
+            </p>
+            <div style="margin-top: 40px;">
+                <a href="index.html" class="btn btn-primary magnetic"
+                    style="padding: 18px 45px; border-radius: 100px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">
+                    Return Home <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealer = document.querySelector('.js-revealer');
+            const torch = document.querySelector('.js-torch');
+            const follower = document.querySelector('.js-follower');
+            const container = document.querySelector('.void-container');
+            const parallaxEls = document.querySelectorAll('.js-parallax-bg');
+
+            // Entry Animation
+            gsap.from('.error-message-void > *', {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "expo.out"
+            });
+
+            // Torch Interaction - Sync with Follower for "Liquid" feel
+            const updateTorch = (e) => {
+                const { clientX, clientY } = e;
+
+                // Move visual torch (mask glow) with a bit of delay to match global follower
+                gsap.to(torch, {
+                    x: clientX,
+                    y: clientY,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+
+                // Update clipping path (tied to follower's lag for premium feel)
+                // We use a custom object to interpolate the value smoothly
+                gsap.to(revealer, {
+                    duration: 0.4,
+                    ease: "power2.out",
+                    onUpdate: () => {
+                        // Get current position of torch (which has the lag)
+                        const x = gsap.getProperty(torch, "x");
+                        const y = gsap.getProperty(torch, "y");
+                        revealer.style.clipPath = `circle(175px at ${x}px ${y}px)`;
+                    }
+                });
+
+                // Parallax for background
+                const xMove = (clientX / window.innerWidth - 0.5) * 80;
+                const yMove = (clientY / window.innerHeight - 0.5) * 80;
+
+                parallaxEls.forEach(el => {
+                    gsap.to(el, {
+                        x: xMove,
+                        y: yMove,
+                        duration: 3.5,
+                        ease: "power2.out"
+                    });
+                });
+            };
+
+            if (window.innerWidth > 1024) {
+                window.addEventListener('mousemove', updateTorch);
+            }
+
+            // Sync with App (Initialize global cursor and other effects)
+            if (window.App) {
+                window.App.initCursor();
+                window.App.initMagnetic();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

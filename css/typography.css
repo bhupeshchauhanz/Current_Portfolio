@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-title,
+.section-title {
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    text-transform: uppercase;
+}
+
+.word-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.word {
+    display: inline-block;
+    transform-origin: left top;
+    will-change: transform, opacity;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--space-xl);
+    text-transform: uppercase;
+}
+
+.subheading {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+.label {
+    display: inline-block;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.body-large {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.mono {
+    font-family: var(--font-accent);
+}

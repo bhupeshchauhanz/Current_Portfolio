@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhupesh Chauhan | Modern Portfolio</title>
+
+    <!-- Meta Tags -->
+    <meta name="description"
+        content="Personal portfolio of Bhupesh Chauhan, a B.Tech IT student & Full Stack Developer.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="light-mode">
+    <!-- Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor js-cursor"></div>
+    <div class="custom-cursor-follower js-follower"></div>
+    <div class="cursor-glow js-cursor-glow"></div>
+
+    <!-- Cinematic Loader -->
+    <div class="loader-wrapper js-loader">
+        <div class="loader-content">
+            <div class="loader-logo">Bhupesh<span>.</span></div>
+            <div class="loader-progress">0%</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Grainy Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="#hero" class="logo">Bhupesh<span>.</span></a>
+
+            <div class="nav-right flex-center">
+                <div class="nav-links">
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#research" class="nav-link">Research</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="assets/resume/Bhupesh-Chauhan-Resume.pdf" class="nav-link" download>Resume ↓</a>
+                </div>
+                <button id="theme-toggle" class="nav-link" aria-label="Toggle dark mode" aria-pressed="false">
+                    <i class="ri-moon-line moon-icon"></i>
+                    <i class="ri-sun-line sun-icon"></i>
+                </button>
+                <div class="hamburger" role="button" aria-label="Menu toggle" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section hero-section">
+            <div class="container grid-two hero-grid">
+                <div class="hero-content">
+                    <!-- Spinning Available Badge -->
+                    <div class="rotating-badge">
+                        <svg viewBox="0 0 100 100" width="100" height="100">
+                            <defs>
+                                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                            </defs>
+                            <text font-size="10.5">
+                                <textPath href="#circle">• OPEN TO WORK • AVAILABLE FOR HIRE </textPath>
+                            </text>
+                        </svg>
+                        <div class="badge-dot"></div>
+                    </div>
+
+                    <h1 class="hero-title">Bhupesh<br>Chauhan</h1>
+                    <div class="hero-description">
+                        <p class="subheading"><span class="typing-text"></span></p>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://www.linkedin.com/in/bhupeshchauhanz/" target="_blank" rel="noopener noreferrer"
+                            class="hero-social-link">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="https://github.com/bhupeshchauhanz" target="_blank" rel="noopener noreferrer"
+                            class="hero-social-link">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/bhupeshchauhanz/" target="_blank" rel="noopener noreferrer"
+                            class="hero-social-link">
+                            <i class="ri-code-line"></i>
+                        </a>
+                    </div>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-light">View Work ↓</a>
+                        <a href="#contact" class="btn btn-secondary">Get in touch ↓</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="assets/images/bhupesh.png" alt="Bhupesh Chauhan" class="hero-img">
+                        <div class="hero-image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Logo Marquee -->
+        <section class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <div class="marquee-item"><i class="ri-reactjs-line"></i><span>React</span></div>
+                    <div class="marquee-item"><span class="marquee-node-logo" aria-hidden="true"><svg viewBox="0 0 64 64" class="marquee-node-svg"><polygon points="32,3 56,17 56,47 32,61 8,47 8,17" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"></polygon><path d="M24 19v26c0 4-2 6-5 6c-2 0-4-1-5-2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M41 23c-7 0-10 3-10 7c0 5 4 6 9 7c5 1 8 2 8 6c0 4-3 7-9 7c-5 0-8-2-10-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Node.js</span></div>
+                    <div class="marquee-item"><i class="ri-javascript-line"></i><span>JavaScript</span></div>
+                    <div class="marquee-item"><i class="ri-cup-fill"></i><span>Java</span></div>
+                    <div class="marquee-item"><i class="ri-code-s-slash-line"></i><span>Python</span></div>
+                    <div class="marquee-item"><i class="ri-database-2-line"></i><span>MySQL</span></div>
+                    <div class="marquee-item"><i class="ri-git-branch-line"></i><span>Git</span></div>
+                    <div class="marquee-item"><i class="ri-html5-fill"></i><span>HTML5</span></div>
+                    <div class="marquee-item"><i class="ri-css3-fill"></i><span>CSS3</span></div>
+                    <div class="marquee-item"><i class="ri-code-box-line"></i><span>C / C++</span></div>
+                    <div class="marquee-item"><i class="ri-brain-line"></i><span>AI / ML</span></div>
+                    <div class="marquee-item"><i class="ri-server-line"></i><span>Express</span></div>
+                    <div class="marquee-item"><i class="ri-flutter-fill"></i><span>Flutter</span></div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="marquee-item"><i class="ri-reactjs-line"></i><span>React</span></div>
+                    <div class="marquee-item"><span class="marquee-node-logo" aria-hidden="true"><svg viewBox="0 0 64 64" class="marquee-node-svg"><polygon points="32,3 56,17 56,47 32,61 8,47 8,17" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"></polygon><path d="M24 19v26c0 4-2 6-5 6c-2 0-4-1-5-2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M41 23c-7 0-10 3-10 7c0 5 4 6 9 7c5 1 8 2 8 6c0 4-3 7-9 7c-5 0-8-2-10-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Node.js</span></div>
+                    <div class="marquee-item"><i class="ri-javascript-line"></i><span>JavaScript</span></div>
+                    <div class="marquee-item"><i class="ri-cup-fill"></i><span>Java</span></div>
+                    <div class="marquee-item"><i class="ri-code-s-slash-line"></i><span>Python</span></div>
+                    <div class="marquee-item"><i class="ri-database-2-line"></i><span>MySQL</span></div>
+                    <div class="marquee-item"><i class="ri-git-branch-line"></i><span>Git</span></div>
+                    <div class="marquee-item"><i class="ri-html5-fill"></i><span>HTML5</span></div>
+                    <div class="marquee-item"><i class="ri-css3-fill"></i><span>CSS3</span></div>
+                    <div class="marquee-item"><i class="ri-code-box-line"></i><span>C / C++</span></div>
+                    <div class="marquee-item"><i class="ri-brain-line"></i><span>AI / ML</span></div>
+                    <div class="marquee-item"><i class="ri-server-line"></i><span>Express</span></div>
+                    <div class="marquee-item"><i class="ri-flutter-fill"></i><span>Flutter</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section bg-white">
+            <div class="container">
+                <div class="about-intro">
+                    <span class="label">About</span>
+                    <h2 class="section-title">Who I Am</h2>
+                    <p class="body-large max-width-680" style="text-align: justify;">I'm a B.Tech IT student passionate about building
+                        real-world applications. My
+                        journey is driven by a curiosity to bridge the gap between complex problems and elegant digital
+                        solutions.</p>
+                </div>
+                <!-- Massive Stats Banner -->
+                <div class="stats-banner">
+                    <div class="stat-massive">
+                        <h3 class="stat-number" data-target="5" data-suffix="+">0</h3>
+                        <p class="stat-label">Projects<br>Completed</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-massive">
+                        <h3 class="stat-number" data-target="10" data-suffix="+">0</h3>
+                        <p class="stat-label">Technologies<br>Mastered</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-massive">
+                        <h3 class="stat-number" data-target="8" data-suffix=".0">0</h3>
+                        <p class="stat-label">Current<br>CGPA</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-massive">
+                        <h3 class="stat-number" data-target="1" data-suffix="+">0</h3>
+                        <p class="stat-label">Research<br>Papers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How I Work / Process Section -->
+        <section class="section process-section">
+            <div class="container">
+                <span class="label">My Approach</span>
+                <h2 class="section-title">How I Work</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <h3 class="subheading">Research & Plan</h3>
+                        <p class="body-medium">Understand the problem space, gather requirements, and design solutions
+                            with clear architecture before writing any code.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <h3 class="subheading">Design & Build</h3>
+                        <p class="body-medium">Write clean, modular code with focus on performance. Build iteratively,
+                            from core features to polished interfaces.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <h3 class="subheading">Test & Ship</h3>
+                        <p class="body-medium">Rigorous testing, bug fixes, and optimization. Deploy with confidence and
+                            iterate based on real-world feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section bg-white">
+            <div class="container">
+                <span class="label">Expertise</span>
+                <h2 class="section-title">What I Know</h2>
+                <div class="skills-card-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon-badge"><i class="ri-layout-masonry-line"></i></div>
+                        <h3>Frontend</h3>
+                        <p>React, Flutter, HTML5, CSS3, JavaScript, Responsive Design</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon-badge"><i class="ri-server-line"></i></div>
+                        <h3>Backend</h3>
+                        <p>Node.js, Express, REST APIs, Authentication</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon-badge"><i class="ri-code-s-slash-line"></i></div>
+                        <h3>Languages</h3>
+                        <p>Python, Java, JavaScript, C / C++</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon-badge"><i class="ri-tools-line"></i></div>
+                        <h3>Tools</h3>
+                        <p>Git, GitHub, MySQL, VS Code, Figma</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <span class="label">Selected Work</span>
+                <h2 class="section-title">Projects</h2>
+
+                <div class="projects-filter flex-center flex-wrap gap-12">
+                    <button class="tag-btn active" data-filter="all">All</button>
+                    <button class="tag-btn" data-filter="App">App</button>
+                    <button class="tag-btn" data-filter="MERN">MERN</button>
+                    <button class="tag-btn" data-filter="AI">AI/ML</button>
+                    <button class="tag-btn" data-filter="JS">JavaScript</button>
+                </div>
+
+
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Injected via projects.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section">
+            <div class="container">
+                <span class="label">Scientific Contributions</span>
+                <h2 class="section-title">Research</h2>
+                <div class="research-grid" id="research-grid">
+                    <!-- Injected via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section bg-white">
+            <div class="container">
+                <span class="label">Academic Path</span>
+                <h2 class="section-title">Education</h2>
+                <div class="timeline-modern">
+                    <div class="timeline-row">
+                        <div class="timeline-year">2023 — 2027</div>
+                        <div class="timeline-body">
+                            <h3>B.Tech in Information Technology</h3>
+                            <p class="body-large">Sharda University, Greater Noida</p>
+                            <p class="text-secondary">CGPA: 8.0 · AI/ML, DSA, Full Stack Development</p>
+                        </div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-year">2021 — 2022</div>
+                        <div class="timeline-body">
+                            <h3>Senior Secondary (XII)</h3>
+                            <p class="body-large">B.K. Public School, Bulandshahr</p>
+                            <p class="text-secondary">Science Stream (PCM) · 60.2%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience/Journey Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <span class="label">My Journey</span>
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline-modern">
+                    <div class="timeline-row">
+                        <div class="timeline-year">2024 — Now</div>
+                        <div class="timeline-body">
+                            <h3>Full Stack Developer</h3>
+                            <p class="body-large">Self-Directed Projects</p>
+                            <p class="text-secondary">Building modern, responsive web applications using React, Node.js,
+                                and Express. Focused on premium user experiences.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-year">Aug 2024</div>
+                        <div class="timeline-body">
+                                <div class="flex-align-center gap-8">
+                                <h3 class="no-margin">Student Ambassador</h3>
+                            </div>
+                            <p class="body-large">LetsUpgrade</p>
+                            <div class="timeline-meta flex-align-center gap-8 mt-6">
+                                <span class="label pill timeline-pill">Volunteering</span>
+                                <span class="text-secondary timeline-duration">1 month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Project Details Modal -->
+        <div id="project-modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content glass">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section bg-white" hidden aria-hidden="true">
+            <div class="container">
+                <span class="label">Recognition</span>
+                <h2 class="section-title">Achievements</h2>
+                <div class="grid-two grid-responsive">
+                    <div class="stat-card">
+                        <i class="ri-trophy-line stat-icon"></i>
+                        <h3>Hackathon Finalist</h3>
+                        <p class="body-medium">Ranked among top 10 in the University-level Hackathon for innovation in
+                            IoT.</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="ri-medal-line stat-icon"></i>
+                        <h3>Python Certification</h3>
+                        <p class="body-medium">Successfully completed advanced Python programming certification from
+                            Coursera.</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="ri-award-line stat-icon"></i>
+                        <h3>Academic Excellence</h3>
+                        <p class="body-medium">Consistently maintained a high CGPA and was recognized on the Dean's List
+                            for Academic Performance.</p>
+                    </div>
+                    <div class="stat-card js-github-stats">
+                        <i class="ri-github-line stat-icon"></i>
+                        <div>
+                            <h3 class="github-repo-count">0+</h3>
+                            <p class="label">Open Source Repos</p>
+                        </div>
+                        <p class="body-small text-muted">Fetching real-time data...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section">
+            <div class="container">
+                <span class="label">Recognition</span>
+                <h2 class="section-title">Certificates</h2>
+                <div class="certificates-grid" id="certificates-grid">
+                    <!-- Injected via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Statement Divider -->
+        <section class="statement-band">
+            <div class="container">
+                <p class="statement-text">Let's turn ideas into <em>reality</em>.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container grid-two">
+                <div class="contact-header">
+                    <span class="label">Get in touch</span>
+                    <h2 class="section-title">Let's Build<br>Something<br>Together</h2>
+                    <p class="body-large">Have a project in mind? Let's make it happen.</p>
+                    
+                    <div class="contact-info-list mt-20">
+                        <p class="body-medium flex-align-center gap-8">
+                            <i class="ri-phone-line" style="color: var(--color-accent); font-size: 1.2rem;"></i> 
+                            <a href="tel:+917017626186" style="color: var(--color-text); text-decoration: none;">+91 70176 26186</a>
+                        </p>
+                        <p class="body-medium flex-align-center gap-8 mt-6">
+                            <i class="ri-mail-line" style="color: var(--color-accent); font-size: 1.2rem;"></i> 
+                            <a href="mailto:support@bhupeshchauhan.in" style="color: var(--color-text); text-decoration: none;">support@bhupeshchauhan.in</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-form-box">
+                    <form id="contact-form" class="contact-form" action="https://formsubmit.co/support@bhupeshchauhan.in" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New portfolio contact request">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden-field">
+                        <div class="form-field">
+                            <label class="form-label">Name</label>
+                            <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label">Message</label>
+                            <textarea name="message" class="form-input" placeholder="Your Message" rows="1"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary align-self-start">Send Message →</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top flex-between">
+                <div>
+                    <p class="label">Bhupesh Chauhan</p>
+                    <p class="body-large mb-20">Available for Internships & Freelancing.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/bhupeshchauhanz/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link">LinkedIn</a>
+                    <a href="https://github.com/bhupeshchauhanz" target="_blank" rel="noopener noreferrer"
+                        class="nav-link">GitHub</a>
+                    <a href="https://leetcode.com/u/bhupeshchauhanz/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link">LeetCode</a>
+                </div>
+            </div>
+            <!-- Giant Footer Name -->
+            <div class="footer-brand">
+                <span>Bhupesh.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Scripts -->
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        Top <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <script src="js/certificatesData.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

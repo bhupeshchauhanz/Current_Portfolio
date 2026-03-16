@@ -1,0 +1,79 @@
+:root {
+    /* Premium HSL Palette */
+    --color-bg: #ffffff;
+    --color-text: #0a0a0a;
+    --color-text-secondary: #4b5563;
+    --color-accent: #3b82f6;
+    /* Vibrant Blue */
+    --color-accent-secondary: #06b6d4;
+    --color-accent-hover: #2563eb;
+    /* Luminous Cyan */
+    --color-border: #f1f5f9;
+    --color-hover: #f8fafc;
+    --color-cursor-hover: #10b981;
+    /* Emerald */
+    --cursor-glow: rgba(16, 185, 129, 0.4);
+
+    /* System Tokens */
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --noise-opacity: 0.03;
+    /* More subtle grain */
+
+    /* Glassmorphism & Glows */
+    --card-bg: rgba(255, 255, 255, 0.01);
+    --card-border: rgba(0, 0, 0, 0.04);
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+    /* Progress Indicator */
+    --progress-height: 3px;
+    --progress-bg: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+
+    /* Typography */
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Space Grotesk', sans-serif;
+
+    /* Spacing Scale (UI-standard) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 56px;
+    --space-4xl: 80px;
+    --space-5xl: 100px;
+
+    /* Layout */
+    --container-max: 1320px;
+    --container-padding: 24px;
+    --section-padding: var(--space-4xl);
+    --border-radius-sm: 8px;
+    --border-radius: 16px;
+    --border-radius-lg: 24px;
+
+    /* Transitions & Easing (Timing Only) */
+    --ease-smooth: cubic-bezier(0.85, 0, 0.15, 1);
+    --transition-slow-timing: 0.8s var(--ease-smooth);
+    --transition-fast-timing: 0.3s var(--ease-smooth);
+}
+
+.dark-mode {
+    --color-bg: #050505;
+    --color-text: #f9fafb;
+    --color-text-secondary: #9ca3af;
+    --color-border: #111827;
+    --color-hover: #111827;
+    --color-accent: #60a5fa;
+    /* Lighter blue for dark mode */
+    --color-accent-hover: #3b82f6;
+    --color-accent-secondary: #22d3ee;
+    --accent-glow: rgba(96, 165, 250, 0.25);
+    --noise-opacity: 0.05;
+    --glass-bg: rgba(0, 0, 0, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --card-border: rgba(255, 255, 255, 0.05);
+}
