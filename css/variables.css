@@ -1,6 +1,7 @@
 :root {
     /* Premium HSL Palette */
     --color-bg: #ffffff;
+    --color-bg-rgb: 255, 255, 255;
     --color-text: #0a0a0a;
     --color-text-secondary: #4b5563;
     --color-accent: #3b82f6;
@@ -62,6 +63,7 @@
 
 .dark-mode {
     --color-bg: #050505;
+    --color-bg-rgb: 5, 5, 5;
     --color-text: #f9fafb;
     --color-text-secondary: #9ca3af;
     --color-border: #111827;

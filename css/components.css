@@ -468,6 +468,8 @@
     padding: 0;
 }
 
+
+
 .project-card:hover .project-image-box img {
     transform: scale(1.06);
     filter: grayscale(0%);
@@ -1803,6 +1805,7 @@ body:not(.is-loading) .cursor-glow {
     color: #FFFFFF;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
 }
 
 .statement-text em {
@@ -1843,6 +1846,74 @@ body:not(.is-loading) .cursor-glow {
     user-select: none;
 }
 
+/* Certificate Filter Bar */
+.cert-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.cert-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 22px;
+    border-radius: 100px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.cert-filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.cert-filter-btn.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+}
+
+.cert-filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    color: inherit;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 100px;
+    min-width: 20px;
+    line-height: 1.6;
+}
+
+.cert-filter-btn:not(.active) .cert-filter-count {
+    background: var(--color-hover);
+    color: var(--color-text-secondary);
+}
+
+.cert-filter-btn:active {
+    transform: scale(0.96);
+}
+
 .certificates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
@@ -1855,16 +1926,13 @@ body:not(.is-loading) .cursor-glow {
     border: 1px solid var(--card-border);
     border-radius: 24px;
     overflow: hidden;
-    transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.36s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     cursor: pointer;
 }
 
 .certificate-card:hover {
-    transform: translateY(-8px);
     border-color: var(--color-accent);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 .certificate-image-box {
@@ -1879,11 +1947,6 @@ body:not(.is-loading) .cursor-glow {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s var(--ease-smooth);
-}
-
-.certificate-card:hover .certificate-image-box img {
-    transform: scale(1.05);
 }
 
 .certificate-content {

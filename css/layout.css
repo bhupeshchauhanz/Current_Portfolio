@@ -17,9 +17,6 @@
 .section {
     padding: var(--section-padding) 0;
     position: relative;
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 800px;
-    /* Placeholder to prevent scrollbar jump */
 }
 
 .hero-section {

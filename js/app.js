@@ -299,14 +299,16 @@ const App = {
     // 5.2 Certificate Management
     initCertificates() {
         const grid = document.getElementById('certificates-grid');
+        const filterBar = document.getElementById('cert-filter-bar');
         if (!grid) return;
 
         const certs = window.CertificatesData || [];
 
+        // Render all cards with data-category attribute
         grid.innerHTML = certs.map((cert, i) => `
-            <div class="certificate-card" data-index="${i}">
+            <div class="certificate-card" data-index="${i}" data-category="${cert.category || 'Other'}">
                 <div class="certificate-image-box">
-                    <img src="${cert.image}" alt="${cert.title}" loading="lazy">
+                    <img src="${cert.image}" alt="${cert.title}" decoding="async">
                 </div>
                 <div class="certificate-content">
                     <div class="certificate-tags">
@@ -319,7 +321,50 @@ const App = {
             </div>
         `).join('');
 
-        // Reuse project modal for certificates
+        // Update "All" count badge
+        const countAll = document.getElementById('count-all');
+        if (countAll) countAll.textContent = certs.length;
+
+        // Filter logic without animation for maximum performance
+        const applyFilter = (filter) => {
+            const cards = grid.querySelectorAll('.certificate-card');
+            let visibleCount = 0;
+
+            cards.forEach((card) => {
+                const category = card.dataset.category;
+                const isMatch = filter === 'all' || category === filter;
+
+                if (isMatch) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Refresh layout engine
+            if (window.ScrollTrigger) ScrollTrigger.refresh();
+        };
+
+        // Wire up filter buttons
+        if (filterBar) {
+            filterBar.addEventListener('click', (e) => {
+                const btn = e.target.closest('.cert-filter-btn');
+                if (!btn) return;
+
+                // Update active state
+                filterBar.querySelectorAll('.cert-filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                applyFilter(btn.dataset.filter);
+            });
+        }
+
+        // Click-to-open modal
         grid.addEventListener('click', (e) => {
             const card = e.target.closest('.certificate-card');
             if (card) {
@@ -330,10 +375,6 @@ const App = {
 
         const cards = grid.querySelectorAll('.certificate-card');
 
-        if (this._revealObserver) {
-            this.prepareRevealElements(cards, { step: 0.05, variant: 'fade' });
-            this.prepareRevealElements(grid.querySelectorAll('.certificate-image-box'), { step: 0.04, variant: 'media' });
-        }
 
         // Refresh ScrollTrigger after dynamic injection
         if (window.ScrollTrigger) ScrollTrigger.refresh();
@@ -487,7 +528,17 @@ const App = {
             hamburger?.classList.toggle('active', isOpen);
             hamburger?.setAttribute('aria-expanded', String(isOpen));
             navLinks?.classList.toggle('active', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            
+            if (isOpen) {
+                document.body.style.overflow = 'hidden';
+                // Staggered reveal for mobile links
+                gsap.fromTo('.nav-link', 
+                    { y: 20, opacity: 0 },
+                    { y: 0, opacity: 1, stagger: 0.1, duration: 0.5, ease: 'power2.out', delay: 0.2, overwrite: true }
+                );
+            } else {
+                document.body.style.overflow = '';
+            }
         };
 
         hamburger?.addEventListener('click', () => toggleMenu(!(navLinks?.classList.contains('active'))));
@@ -571,10 +622,17 @@ const App = {
         });
 
         this.initRevealObserver();
-        // Added .about-intro .body-large, .stat-massive to cover missing sections
-        this.prepareRevealElements(document.querySelectorAll('.section-title, .about-intro .body-large, .stat-massive, .stat-card, .experience-card, .process-step, .skill-card, .timeline-row, .statement-text, .project-card, .research-card, .certificate-card'), { step: 0.06, variant: 'fade' });
-        this.prepareRevealElements(document.querySelectorAll('.project-image-box, .hero-image-wrapper, .skill-icon-badge, .certificate-image-box'), { step: 0.04, variant: 'media' });
+        // Standalone text elements: no stagger needed (animate instantly)
+        this.prepareRevealElements(document.querySelectorAll('.section-title, .about-intro .body-large, .stat-massive, .statement-text'), { step: 0, variant: 'fade' });
 
+        // Repeating grid elements: stagger them
+        const gridSelectors = ['.stat-card', '.experience-card', '.process-step', '.skill-card', '.timeline-row', '.project-card', '.research-card'];
+        gridSelectors.forEach(sel => {
+            this.prepareRevealElements(document.querySelectorAll(sel), { step: 0.06, variant: 'fade' });
+        });
+
+        // Media elements
+        this.prepareRevealElements(document.querySelectorAll('.project-image-box, .hero-image-wrapper, .skill-icon-badge'), { step: 0.04, variant: 'media' });
         // Cinematic Loader Sequence
         const loader = document.querySelector('.js-loader');
         const loaderProgress = document.querySelector('.loader-progress');

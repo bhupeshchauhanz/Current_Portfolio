@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/typography.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/layout.css?v=2.0">
+    <link rel="stylesheet" href="css/components.css?v=5.0">
+    <link rel="stylesheet" href="css/animations.css?v=5.0">
+    <link rel="stylesheet" href="css/responsive.css?v=5.0">
 </head>
 
 <body class="light-mode">
@@ -400,6 +400,15 @@
             <div class="container">
                 <span class="label">Recognition</span>
                 <h2 class="section-title">Certificates</h2>
+                <!-- Category Filter Bar -->
+                <div class="cert-filter-bar" id="cert-filter-bar" role="tablist" aria-label="Filter certificates by category">
+                    <button class="cert-filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="cert-filter-count" id="count-all"></span></button>
+                    <button class="cert-filter-btn" data-filter="Hackathon" role="tab" aria-selected="false">Hackathons</button>
+                    <button class="cert-filter-btn" data-filter="AI" role="tab" aria-selected="false">AI & ML</button>
+                    <button class="cert-filter-btn" data-filter="Cloud" role="tab" aria-selected="false">Cloud</button>
+                    <button class="cert-filter-btn" data-filter="Coding" role="tab" aria-selected="false">Coding</button>
+                    <button class="cert-filter-btn" data-filter="Course" role="tab" aria-selected="false">Courses</button>
+                </div>
                 <div class="certificates-grid" id="certificates-grid">
                     <!-- Injected via app.js -->
                 </div>
@@ -451,7 +460,7 @@
                             <textarea name="message" class="form-input" placeholder="Your Message" rows="1"
                                 required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary align-self-start">Send Message →</button>
+                        <button type="submit" class="btn btn-primary">Send Message →</button>
                     </form>
                 </div>
             </div>
@@ -493,7 +502,7 @@
     </button>
 
     <script src="js/certificatesData.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=5.0"></script>
 </body>
 
 </html>
