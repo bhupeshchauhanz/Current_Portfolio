@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Bhupesh Chauhan</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="./assets/images/BC.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --bg: #050505;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+            --border: #1f2937;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: white;
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Hero */
+        .error-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Background glow */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        /* Large 404 text */
+        .error-big-text {
+            position: absolute;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(12rem, 30vw, 22rem);
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
+            user-select: none;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        /* Content */
+        .error-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 520px;
+        }
+
+        .error-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .error-badge i { font-size: 0.9rem; }
+
+        .error-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .error-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .error-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--accent);
+            color: white;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .error-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+            background: #2563eb;
+        }
+
+        .error-btn:active { transform: translateY(0) scale(0.97); }
+
+        /* Floating particles */
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float-particle 8s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 15%; top: 20%; animation-delay: 0s; animation-duration: 7s; }
+        .particle:nth-child(2) { left: 75%; top: 30%; animation-delay: 1s; animation-duration: 9s; }
+        .particle:nth-child(3) { left: 40%; top: 70%; animation-delay: 2s; animation-duration: 6s; }
+        .particle:nth-child(4) { left: 85%; top: 60%; animation-delay: 3s; animation-duration: 8s; }
+        .particle:nth-child(5) { left: 25%; top: 80%; animation-delay: 4s; animation-duration: 10s; }
+        .particle:nth-child(6) { left: 60%; top: 15%; animation-delay: 2.5s; animation-duration: 7.5s; }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+            25% { transform: translateY(-20px) translateX(10px); opacity: 0.5; }
+            50% { transform: translateY(-40px) translateX(-5px); opacity: 0.3; }
+            75% { transform: translateY(-20px) translateX(15px); opacity: 0.4; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav { padding: 16px 20px; }
+            .error-big-text { font-size: 10rem; }
+            .bg-glow { width: 350px; height: 350px; }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .particle, .bg-glow { animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="logo">Bhupesh<span>.</span></a>
+        <a href="index.html" class="nav-link">← Back to Home</a>
+    </nav>
+
+    <!-- Main -->
+    <main class="error-container">
+        <!-- Background effects -->
+        <div class="bg-glow" aria-hidden="true"></div>
+        <div class="error-big-text" aria-hidden="true">404</div>
+
+        <!-- Particles -->
+        <div class="particles" aria-hidden="true">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="error-content">
+            <div class="error-badge">
+                <i class="ri-compass-3-line"></i>
+                Page Not Found
+            </div>
+            <h1 class="error-title">Lost in the Void?</h1>
+            <p class="error-desc">The page you're looking for doesn't exist or has been moved. No worries — let me guide you back.</p>
+            <a href="index.html" class="error-btn">
+                Return Home <i class="ri-arrow-right-line"></i>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
