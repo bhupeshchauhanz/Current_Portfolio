@@ -4,6 +4,15 @@
  */
 
 const CertificatesData = [
+    // ── 2026 ──
+    {
+        title: "Certificates of Flutter for Android & iOS Development",
+        provider: "Sharda University",
+        date: "2026",
+        image: "assets/certificates/Certificates of Flutter for Android & iOS Development.jpg",
+        tags: ["Flutter", "Application"],
+        category: "Course"
+    },
     // ── 2025 ──
     {
         title: "Google Cloud Arcade Facilitator 2025",
