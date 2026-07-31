@@ -9,7 +9,7 @@ const CertificatesData = [
         title: "Certificates of Flutter for Android & iOS Development",
         provider: "Sharda University",
         date: "2026",
-        image: "assets/certificates/Certificates of Flutter for Android & iOS Development.jpg",
+        image: "assets/certificates/Certificates_of_Flutter_for_Android_&_iOS_Development.jpg",
         tags: ["Flutter", "Application"],
         category: "Course"
     },
