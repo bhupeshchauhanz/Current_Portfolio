@@ -6,6 +6,14 @@
 const CertificatesData = [
     // ── 2026 ──
     {
+        title: "ServiceNow Certified Application Developer (CAD)",
+        provider: "ServiceNow",
+        date: "2026",
+        image: "assets/certificates/Certificates_of_ServiceNow_CAD.jpg",
+        tags: ["CAD", "ServiceNow Certified Application Developer (CAD)"],
+        category: "Course"
+    },
+    {
         title: "Certificates of Flutter for Android & iOS Development",
         provider: "Sharda University",
         date: "2026",
